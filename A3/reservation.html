@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Reservation - Coffee Shop</title>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-coffee {
+                background: url("Images/background.png") no-repeat center center fixed;
+                background-size: cover;
+            }
+            .bg-form {
+                background: rgba(30, 30, 47, 0.95);
+            }
+            .input-style {
+                @apply w-full p-3 border border-gray-600 rounded-lg bg-[#2b2b3a] text-white text-base outline-none transition-all duration-300;
+            }
+            .input-style:focus {
+                @apply border-yellow-500 shadow-[0_0_8px_rgba(210,145,28,0.6)];
+            }
+            .btn-reserve {
+                @apply bg-gradient-to-r from-yellow-600 to-amber-800 text-white p-4 border-none cursor-pointer rounded-lg w-full text-lg font-bold mt-3 transition-all duration-300;
+            }
+            .btn-reserve:hover {
+                @apply bg-gradient-to-r from-yellow-700 to-amber-900 -translate-y-1 shadow-[0_5px_15px_rgba(210,145,28,0.4)];
+            }
+            .text-gold {
+                color: #d2911c;
+            }
+            .hover-gold:hover {
+                color: #d2911c;
+            }
+        }
+    </style>
+</head>
+<body class="bg-coffee min-h-screen flex flex-col">
+    <nav class="w-full h-[10vh] flex items-center px-5">
+        <div class="w-full flex justify-between items-center">
+            <div class="logo">
+                <img src="Images/logo.png" alt="Coffee Shop Logo" class="w-[170px] mt-8">
+            </div>
+            <div class="links flex">
+                <div class="link mx-4">
+                    <a href="index.html" class="text-white no-underline text-xl px-3 py-2 transition-colors duration-300 hover-gold">Home</a>
+                </div>
+                <div class="link mx-4">
+                    <a href="signup.html" class="text-white no-underline text-xl px-3 py-2 transition-colors duration-300 hover-gold">Sign Up</a>
+                </div>
+                <div class="link mx-4">
+                    <a href="login.html" class="text-white no-underline text-xl px-3 py-2 transition-colors duration-300 hover-gold">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="reservation-form w-full max-w-[600px] bg-form p-10 rounded-xl text-white shadow-xl">
+            <h2 class="text-3xl mb-7 text-gold text-center font-bold">Make a Reservation</h2>
+            <form id="reservationForm" method="post">
+                <div class="form-group mb-5">
+                    <label for="name" class="block mb-2 font-medium text-white">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required class="input-style">
+                </div>
+                
+                <div class="form-group mb-5">
+                    <label for="email" class="block mb-2 font-medium text-white">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required class="input-style">
+                </div>
+                
+                <div class="form-group mb-5">
+                    <label for="phone" class="block mb-2 font-medium text-white">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required class="input-style">
+                </div>
+                
+                <div class="form-row flex gap-4 mb-5">
+                    <div class="form-group flex-1">
+                        <label for="date" class="block mb-2 font-medium text-white">Date</label>
+                        <input type="date" id="date" name="date" required class="input-style">
+                    </div>
+                    
+                    <div class="form-group flex-1">
+                        <label for="time" class="block mb-2 font-medium text-white">Time</label>
+                        <input type="time" id="time" name="time" required class="input-style">
+                    </div>
+                </div>
+                
+                <div class="form-group mb-5">
+                    <label for="guests" class="block mb-2 font-medium text-white">Number of Guests</label>
+                    <select id="guests" name="guests" required class="input-style cursor-pointer">
+                        <option value="" disabled selected>Select number of guests</option>
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                        <option value="5">5 People</option>
+                        <option value="6">6 People</option>
+                        <option value="7+">7+ People</option>
+                    </select>
+                </div>
+                
+                <div class="form-group mb-5">
+                    <label for="special-requests" class="block mb-2 font-medium text-white">Special Requests</label>
+                    <textarea id="special-requests" name="special-requests" placeholder="Any special requests or notes" class="input-style h-[100px] resize-y"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-reserve">Confirm Reservation</button>
+            </form>
+            
+            <div class="reservation-info mt-7 pt-4 border-t border-gray-600 text-sm text-gray-300">
+                <p class="my-2 flex items-center gap-2"><i class="fas fa-info-circle text-gold"></i> Reservations should be made at least 2 hours in advance.</p>
+                <p class="my-2 flex items-center gap-2"><i class="fas fa-phone text-gold"></i> For large groups or urgent bookings, please call us at: (123) 456-7890</p>
+            </div>
+        </div>
+    </main>
+    
+    <!-- JavaScript File -->
+    <script src="js/reservation.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#d2911c',
+            coffeedark: '#49340f'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html, body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: url('images/background.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .gradient-hr {
+      background: linear-gradient(to right, #d2911c, #49340f);
+    }
+    .nav-link:hover {
+      color: #d2911c;
+    }
+    #coffee-facts {
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="w-full h-[10vh] flex items-center px-5">
+    <div class="w-full flex justify-between items-center">
+      <div class="logo">
+        <img src="Images/logo.png" alt="Coffee Shop Logo" class="w-[170px] mt-7">
+      </div>
+      <div class="flex">
+        <div class="mx-4" data-aos="fade-up" data-aos-duration="1200">
+          <a href="reservation.html" class="text-white hover:text-coffee text-xl p-2.5 transition-colors duration-300">Reservation</a>
+        </div>
+        <div class="mx-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+          <a href="signup.html" class="text-white hover:text-coffee text-xl p-2.5 transition-colors duration-300">Sign Up</a>
+        </div>
+        <div class="mx-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+          <a href="login.html" class="text-white hover:text-coffee text-xl p-2.5 transition-colors duration-300">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="w-full h-[90vh] flex justify-evenly items-center px-5">
+    <!-- Text Content -->
+    <div class="w-2/5 text-white">
+      <h2 class="text-coffee text-2xl font-extrabold" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="400">EXCEPTIONAL QUALITY</h2>
+      <h1 class="text-5xl font-bold mt-2" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="600">
+        We began with a concept: <br>
+        Creating amazing <span class="text-coffee">Coffee</span>
+      </h1>
+      <div class="w-2/5 h-1 my-2.5 gradient-hr" data-aos="zoom-in-right" data-aos-duration="1500" data-aos-delay="700"></div>
+      <p class="text-xl leading-relaxed" data-aos="flip-down" data-aos-duration="1500" data-aos-delay="900">
+        Our mission is to provide sustainably sourced, hand-picked quality coffee. Great coffee is our passion, and we want to share it with you.
+      </p>
+      
+      <!-- Coffee Facts Section -->
+      <div class="mt-6 bg-black bg-opacity-30 p-4 rounded-lg border-l-4 border-coffee" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000">
+        <p class="text-sm text-coffee mb-1">COFFEE FACT</p>
+        <p id="coffee-facts" class="text-white text-lg italic">Coffee is the second most traded commodity in the world, after oil.</p>
+      </div>
+      
+      <!-- Icons -->
+      <div class="flex gap-5 mt-5">
+        <div class="flex items-center text-xl" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="1100">
+          <i class="fa-solid fa-mug-hot text-coffee text-3xl mr-2.5"></i><span>Tasty coffee</span>
+        </div>
+        <div class="flex items-center text-xl" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="1100">
+          <i class="fa-solid fa-circle-play text-coffee text-3xl mr-2.5"></i><span>Play</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div>
+      <img src="Images/main.png" alt="Coffee Cup" class="w-[500px] max-w-full" data-aos="zoom-in-left" data-aos-duration="3000" />
+    </div>
+  </section>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  
+  <!-- Custom JavaScript -->
+  <script src="JavaScript/index.js"></script>
+</body>
+</html>

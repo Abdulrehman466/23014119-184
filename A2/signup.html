@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sign Up</title>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-coffee {
+                background: url("background.png") no-repeat center center fixed;
+                background-size: cover;
+                height: 100vh;
+                overflow: hidden;
+            }
+            .bg-form {
+                background: rgba(30, 30, 47, 0.95);
+            }
+            .input-style {
+                @apply w-full p-3 my-3 border border-gray-600 rounded-lg bg-[#2b2b3a] text-white text-base outline-none transition-all duration-300;
+            }
+            .input-style:focus {
+                @apply border-yellow-400 shadow-[0_0_8px_rgba(255,204,0,0.7)];
+            }
+            .btn-gold {
+                @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-black p-3 border-none cursor-pointer rounded-lg w-full text-lg font-bold mt-4 transition-all duration-300;
+            }
+            .btn-gold:hover {
+                @apply bg-gradient-to-r from-yellow-500 to-yellow-600 scale-105 shadow-[0_0_10px_rgba(255,136,0,0.6)];
+            }
+            .link-gold {
+                @apply text-yellow-400 no-underline text-base font-bold transition-colors duration-300;
+            }
+            .link-gold:hover {
+                @apply text-yellow-500;
+            }
+        }
+    </style>
+</head>
+<body class="bg-coffee flex justify-center items-center">
+    <div class="w-[400px] p-9 bg-form text-center rounded-xl text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+        <h2 class="text-2xl mb-5 font-bold uppercase tracking-wider">Sign Up</h2>
+        <form action="#">
+            <input type="text" placeholder="Full Name" required class="input-style">
+            <input type="email" placeholder="Email Address" required class="input-style">
+            <input type="text" placeholder="Username" required class="input-style">
+            <input type="password" placeholder="Password" required class="input-style">
+            <input type="password" placeholder="Confirm Password" required class="input-style">
+            <button type="submit" class="btn-gold">Create Account</button>
+        </form>
+        <p class="mt-4 text-sm text-gray-300">Already have an account? <a href="login.html" class="link-gold">Login</a></p>
+        <a href="index.html" class="link-gold inline-block mt-4">Back to Home</a>
+    </div>
+</body>
+</html>
